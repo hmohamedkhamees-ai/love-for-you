@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ليكي إنتِ ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Tahoma, sans-serif;
+      background: linear-gradient(135deg, #12000a, #3b071d, #16000d);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      animation: floatUp linear infinite;
+      opacity: 0.7;
+      font-size: 22px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 700px;
+      padding: 45px 30px;
+      text-align: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 30px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 70px rgba(0,0,0,0.45);
+    }
+
+    .small {
+      font-size: 16px;
+      opacity: 0.8;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 10vw, 75px);
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #ffdce9;
+      margin-bottom: 30px;
+    }
+
+    button {
+      border: none;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #3b071d;
+      background: white;
+      box-shadow: 0 10px 30px rgba(255,255,255,0.18);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.06);
+      box-shadow: 0 15px 40px rgba(255,255,255,0.3);
+    }
+
+    #letter {
+      display: none;
+      margin-top: 35px;
+      text-align: right;
+      line-height: 2.2;
+      font-size: 18px;
+      color: #fff4f8;
+      animation: appear 1s ease;
+    }
+
+    #letter h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
+
+    #letter p {
+      margin-bottom: 18px;
+    }
+
+    .ending {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #fff;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .signature {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 17px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts">
+    <span class="heart" style="left:5%; animation-duration:9s;">❤️</span>
+    <span class="heart" style="left:15%; animation-duration:12s; animation-delay:2s;">💗</span>
+    <span class="heart" style="left:28%; animation-duration:10s; animation-delay:4s;">💕</span>
+    <span class="heart" style="left:42%; animation-duration:14s; animation-delay:1s;">❤️</span>
+    <span class="heart" style="left:55%; animation-duration:11s; animation-delay:3s;">💖</span>
+    <span class="heart" style="left:68%; animation-duration:13s;">💕</span>
+    <span class="heart" style="left:80%; animation-duration:10s; animation-delay:2s;">❤️</span>
+    <span class="heart" style="left:92%; animation-duration:15s; animation-delay:5s;">💗</span>
+  </div>
+
+  <main class="page">
+
+    <section class="card">
+
+      <div class="small">في حاجة صغيرة عايز أقولها ليكي... ❤️</div>
+
+      <h1>ليكي إنتِ ❤️</h1>
+
+      <div class="subtitle">
+        يمكن الكلام ده بسيط،<br>
+        بس كل كلمة فيه طالعة من قلبي.
+      </div>
+
+      <button onclick="openLetter()">
+        افتحي المفاجأة ❤️
+      </button>
+
+      <div id="letter">
+
+        <h2>رسالة مني ليكي ❤️</h2>
+
+        <p>
+          أنا عارف إني ساعات بزعلِك، وساعات بتصرف بطريقة تضايقك من غير ما أقصد،
+          ويمكن في أوقات ببقى السبب في إن يومك يبقى وحش بدل ما أكون الشخص
+          اللي يخليه أحسن.
+        </p>
+
+        <p>
+          وعشان كده أنا عايز أقولك <strong>آسف</strong>...
+          مش بس عشان موقف معين، لكن عشان كل مرة حسيتِ فيها إني مش مقدّر
+          مشاعرك، أو إني بعدت عنك وإنتِ كنتِ محتاجة وجودي.
+        </p>
+
+        <p>
+          الحقيقة إنك مهمة عندي أكتر مما بعرف أعبّر عنه.
+        </p>
+
+        <p>
+          أنا بحبك، وبحب تفاصيلك، وكلامك، ووجودك في حياتي.
+          وحتى لما بنتخانق أو نزعل من بعض، ده عمره ما بيغير مكانتك عندي.
+        </p>
+
+        <p>
+          أنا مش هقولك إني هبقى شخص مثالي ومش هزعلك أبدًا،
+          لأن ده مش حقيقي.
+          بس أوعدك إني هحاول أفهمك أكتر، وأسمعك أكتر،
+          وأفكر في إحساسك قبل ما أتصرف.
+        </p>
+
+        <p>
+          ولو في حاجة واحدة أتمنى تصدقيها من كل الكلام ده فهي:
+        </p>
+
+        <div class="ending">
+          أنا مش عايز أخسرك. ❤️
+        </div>
+
+        <p>
+          آسف على كل مرة زعلتك فيها، وكل مرة خليتك تفكري
+          إنك مش فارقة معايا.
+        </p>
+
+        <p>
+          إنتِ فارقة... جدًا.
+        </p>
+
+        <p>
+          ومهما حصل بينا، هفضل شايف إن وجودك في حياتي
+          حاجة جميلة أنا محظوظ بيها.
+        </p>
+
+        <div class="ending">
+          بحبك... وآسف. ❤️
+        </div>
+
+        <div class="signature">
+          — من شخص بيحبك أكتر مما بيعرف يقول
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    function openLetter() {
+      const letter = document.getElementById("letter");
+      const button = document.querySelector("button");
+
+      letter.style.display = "block";
+      button.style.display = "none";
+
+      setTimeout(() => {
+        letter.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 100);
+    }
+  </script>
+
+</body>
+</html>
