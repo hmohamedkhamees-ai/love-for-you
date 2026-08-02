@@ -536,9 +536,57 @@ let letter=document.getElementById("letter");
 let button=document.querySelector("button");
 let music=document.getElementById("music");
 
+music.volume = 0.5;
 
-music.play();
+music.play().catch(function(error){
+console.log("المتصفح منع التشغيل التلقائي");
+});
 
+letter.style.display="block";
+
+button.style.display="none";
+
+setTimeout(function(){
+
+letter.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},200);
+
+}
+
+</script><script>
+
+function openLetter(){
+
+let letter=document.getElementById("letter");
+let button=document.querySelector("button");
+let music=document.getElementById("music");
+
+music.volume = 0.5;
+
+music.play().catch(function(error){
+console.log("المتصفح منع التشغيل التلقائي");
+});
+
+letter.style.display="block";
+
+button.style.display="none";
+
+setTimeout(function(){
+
+letter.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},200);
+
+}
+
+</script>
 
 letter.style.display="block";
 
