@@ -262,7 +262,7 @@ color:#ffe0eb;
 
 <body>
 
-<audio id="music" src="song.mp3"></audio>
+<audio id="music" src="song.mp3" preload="auto"></audio>
 
 
 <div class="hearts">
@@ -509,9 +509,6 @@ color:#ffe0eb;
 
 </footer>
 
-
-
-
 <script>
 
 function openLetter(){
@@ -520,9 +517,11 @@ let letter=document.getElementById("letter");
 let button=document.querySelector("button");
 let music=document.getElementById("music");
 
+music.volume = 0.7;
 
-music.play();
-
+music.play().catch(function(error){
+console.log("الصوت محتاج ضغط من المستخدم");
+});
 
 letter.style.display="block";
 
@@ -544,8 +543,3 @@ block:"start"
 }
 
 </script>
-
-
-
-</body>
-</html>
