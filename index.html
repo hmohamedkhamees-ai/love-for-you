@@ -1,680 +1,394 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>لفطومي ❤️</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-font-family:Tahoma,Arial,sans-serif;
-background:linear-gradient(135deg,#120008,#5a1230,#220010);
-color:white;
-overflow-x:hidden;
+  font-family:Arial,Tahoma,sans-serif;
+  background:linear-gradient(135deg,#16000d,#4a0924,#1b000f);
+  color:white;
+  overflow-x:hidden;
 }
 
-
 /* القلوب */
-
 .hearts{
-position:fixed;
-inset:0;
-overflow:hidden;
-z-index:0;
-pointer-events:none;
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
 }
 
 .heart{
-position:absolute;
-bottom:-50px;
-font-size:25px;
-animation:up 12s linear infinite;
-opacity:.8;
+  position:absolute;
+  bottom:-50px;
+  font-size:23px;
+  animation:floatUp linear infinite;
+  opacity:.75;
 }
 
-
-@keyframes up{
-
-0%{
-transform:translateY(0);
-opacity:0;
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) rotate(0);
+    opacity:0;
+  }
+  15%{opacity:.8}
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
 }
-
-20%{
-opacity:1;
-}
-
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-
-}
-
-
 
 /* الصفحة */
-
 .page{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:25px;
-position:relative;
-z-index:2;
+  position:relative;
+  z-index:2;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px;
 }
-
 
 .card{
-width:100%;
-max-width:800px;
-background:rgba(255,255,255,.1);
-backdrop-filter:blur(15px);
-border-radius:35px;
-padding:40px 25px;
-text-align:center;
-box-shadow:0 20px 60px #0008;
+  width:100%;
+  max-width:750px;
+  padding:45px 25px;
+  text-align:center;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:30px;
+  backdrop-filter:blur(15px);
+  box-shadow:0 20px 70px rgba(0,0,0,.5);
 }
-
 
 .small{
-font-size:18px;
-opacity:.8;
+  font-size:16px;
+  opacity:.8;
+  margin-bottom:15px;
 }
-
 
 h1{
-font-size:70px;
-margin:20px;
+  font-size:clamp(45px,10vw,80px);
+  margin-bottom:15px;
 }
-
 
 .subtitle{
-font-size:21px;
-line-height:2;
-color:#ffd9e8;
+  font-size:20px;
+  line-height:2;
+  color:#ffdce9;
+  margin-bottom:25px;
 }
-
-
-
-/* الزرار */
 
 button{
-
-margin:30px;
-
-padding:16px 35px;
-
-border:0;
-
-border-radius:50px;
-
-font-size:20px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-background:#e60023;
-
-color:white;
-
-box-shadow:0 10px 25px #0008;
-
-transition:.3s;
-
+  border:0;
+  padding:15px 28px;
+  border-radius:50px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  color:#4a0924;
+  background:white;
+  transition:.3s;
+  margin:7px;
 }
-
 
 button:hover{
-
-transform:scale(1.08);
-
-background:#ff1744;
-
+  transform:scale(1.06);
 }
-
-
-
-/* الرسالة */
 
 #letter{
-
-display:none;
-
-text-align:right;
-
-line-height:2.3;
-
-font-size:19px;
-
-animation:show 1s;
-
+  display:none;
+  margin-top:30px;
+  text-align:right;
+  line-height:2.2;
+  font-size:18px;
+  color:#fff4f8;
+  animation:appear 1s ease;
 }
 
-
-@keyframes show{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
+#letter h2{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:30px;
 }
 
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
+#letter p{
+  margin-bottom:18px;
 }
-
-}
-
-
 
 .big{
-
-text-align:center;
-
-font-size:30px;
-
-font-weight:bold;
-
-color:#ffd0df;
-
-margin:30px;
-
+  text-align:center;
+  font-size:27px;
+  font-weight:bold;
+  margin:30px 0;
+  color:#ffd3e1;
 }
 
+.signature{
+  text-align:center;
+  margin-top:30px;
+  font-size:18px;
+  opacity:.8;
+}
 
+@keyframes appear{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
+/* الصور */
 .gallery{
-
-padding:50px 20px;
-
-position:relative;
-
-z-index:2;
-
+  position:relative;
+  z-index:2;
+  padding:60px 18px;
+  max-width:1100px;
+  margin:auto;
 }
-
 
 .gallery h2{
-
-text-align:center;
-
-font-size:35px;
-
-margin-bottom:30px;
-
+  text-align:center;
+  font-size:32px;
+  margin-bottom:25px;
 }
-
 
 .photos{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
-gap:20px;
-
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
 }
 
-
-.photo-box{
-
-background:#ffffff15;
-
-padding:15px;
-
-border-radius:25px;
-
-text-align:center;
-
-opacity:0;
-
-transform:translateY(50px);
-
-transition:1s;
-
+.photos img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  transition:.4s;
 }
 
-
-.photo-box.show{
-
-opacity:1;
-
-transform:translateY(0);
-
+.photos img:hover{
+  transform:scale(1.03) rotate(1deg);
 }
 
-
-.photo-box img{
-
-width:100%;
-
-height:300px;
-
-object-fit:cover;
-
-border-radius:20px;
-
+.note{
+  text-align:center;
+  font-size:19px;
+  line-height:2;
+  margin:35px auto;
+  max-width:700px;
+  color:#ffdce9;
 }
-
-
-.photo-box p{
-
-margin-top:15px;
-
-line-height:2;
-
-color:#ffe0eb;
-
-}
-
 
 footer{
-
-text-align:center;
-
-padding:30px;
-
+  text-align:center;
+  padding:35px;
+  opacity:.7;
 }
-
 </style>
-
 </head>
 
 <body>
 
-<audio id="music" src="song.mp3"></audio>
-
-
 <div class="hearts">
 
-<span class="heart" style="left:10%">❤️</span>
-
-<span class="heart" style="left:30%;animation-delay:2s">💗</span>
-
-<span class="heart" style="left:50%;animation-delay:4s">💕</span>
-
-<span class="heart" style="left:70%;animation-delay:1s">❤️</span>
-
-<span class="heart" style="left:90%;animation-delay:3s">💖</span>
+<span class="heart" style="left:5%;animation-duration:9s;">❤️</span>
+<span class="heart" style="left:15%;animation-duration:12s;animation-delay:2s;">💗</span>
+<span class="heart" style="left:28%;animation-duration:10s;animation-delay:4s;">💕</span>
+<span class="heart" style="left:42%;animation-duration:14s;animation-delay:1s;">❤️</span>
+<span class="heart" style="left:55%;animation-duration:11s;animation-delay:3s;">💖</span>
+<span class="heart" style="left:68%;animation-duration:13s;">💕</span>
+<span class="heart" style="left:80%;animation-duration:10s;animation-delay:2s;">❤️</span>
+<span class="heart" style="left:92%;animation-duration:15s;animation-delay:5s;">💗</span>
 
 </div>
+
 <main class="page">
 
 <section class="card">
 
-
 <div class="small">
-في حاجة كده عايز أقولها ليكي يا فطومي 😂❤️
+في حاجة كده عايز أقولها ليكي يا فقريّة 😂❤️
 </div>
-
 
 <h1>
 فطومي ❤️
 </h1>
 
-
 <div class="subtitle">
-
-مش عارف أقول الكلام ده إزاي 😂❤️<br>
-فقلت أعملك الموقع ده بدل ما أقعد أرغي كتير
-
+مش عارف أقول الكلام ده إزاي بصراحة 😂<br>
+فقلت أعملك الموقع ده بدل ما أقعد أرغي كتير.
 </div>
 
-
 <button onclick="openLetter()">
-اضغطي زي ما انتي ضاغطة عليا 😂❤️
+افتحي يا بت 😂❤️
 </button>
 
-
-
 <div id="letter">
-
 
 <h2>
 بصي بقى يا فطومي ❤️
 </h2>
 
-
-
 <p>
-أنا مش بعرف أقول الكلام اللي جوايا دايمًا بس حبيت أعملك حاجة تفضل معاكي وتفكرك إنك حد مهم عندي أوي
+أنا عارف إني ساعات ببقى رخم وبزعلك، وساعات بعمل حاجات تضايقك وأنا أصلاً مش واخد بالي إن الموضوع ممكن يزعلك بالشكل ده.
 </p>
 
-
 <p>
-عارف إني ساعات ببقى رخم وبقفل وساعات بطلع عينك معايا 😂 بس والله ده مش معناه إنك مش فارقة معايا
+وعارف كمان إني ساعات لما بتخانق معاكي أو أكون متضايق بقفل ومببقاش أحسن حد في التعامل، وده أكيد بيخليكي تحسي إني مش فارق معايا.
 </p>
 
-
 <p>
-إنتي بقيتي جزء من يومي ومن تفاصيل كتير في حياتي ومهما رخمت عليكي عارفة إن مكانك كبير عندي
+بس والله يا فطومي الموضوع مش كده خالص.
 </p>
 
-
+<p>
+أنا بحبك بجد، ومش بقولها عشان الموقع ولا عشان أصلح موقف وخلاص 😂❤️
+إنتي عارفة إنتي بالنسبالي إيه.
+</p>
 
 <div class="big">
-بحبك يا فطومي 😂❤️
+بحبك يا فقريّة 😂❤️
 </div>
 
-
-
 <p>
-فاكرة بقى كل الحاجات الصغيرة اللي بينا 😂❤️ الحاجات اللي يمكن تبان عادية بس بالنسبالي ليها معنى كبير
+وبحب هزارك ورخامتك، وبحب إنك بتدخلي في تفاصيل يومي حتى لو ساعات بتطلعي عيني 😂
 </p>
 
-
-
 <p>
-أنا بحب ضحكتك وهزارك وطريقتك وبحب إني أرخم عليكي وتفضلي تزعلي مني شوية وبعدين نرجع نضحك تاني 😂❤️
+وبحب كلامنا، حتى الكلام اللي بنتخانق فيه، وبحب إن في حد أصلًا فارق معاه أنا بعمل إيه وبفكر في إيه.
 </p>
 
-
-
 <p>
-ومهما حصل بينا ومهما اتخانقنا مش عايزك تنسي إنك حد غالي عندي أوي
+أنا آسف على كل مرة زعلتك فيها، وكل مرة خليتك تحسي إني مش مهتم أو إنك مش أولوية عندي.
 </p>
 
-
-
 <p>
-ومعلش يا فطومي على كل مرة زعلتك فيها أو خليتك تحسي إني مش مهتم عشان ساعات أنا بعرف أعمل حاجات غلط بس مشاعري ناحيتك عمرها ما كانت قليلة
+ومش هقولك بقى الكلام المثالي بتاع "مش هزعلك تاني أبدًا" عشان إحنا الاتنين عارفين إني ممكن أبقى غلس تاني 😂
 </p>
 
+<p>
+بس هقولك إني هحاول، وهحاول بجد، عشان مش عايز كل شوية نوصل لمرحلة إننا نزعل من بعض ونبعد.
+</p>
 
+<p>
+أنا عايزك تفضلي معايا، وعايز أفضل أشوفك وأكلمك وأرخم عليكي وأسمعك وإنتي بتتكلمي في نفس الحاجة للمرة المليون 😂❤️
+</p>
 
 <div class="big">
 إنتي غالية عندي أوي ❤️
 </div>
 
-
-
 <p>
-ودلوقتي بقى تعالي نفتكر شوية حاجات حلوة بينا 😂❤️
+ومهما اتخانقنا ومهما اتضايقنا من بعض، ده مش معناه إن حبي ليكي بيتغير.
 </p>
 
+<p>
+أنا ممكن أكون مش بعرف أقول اللي جوايا صح، وممكن تصرفاتي ساعات تقول عكس اللي حاسه، بس الحقيقة إنك فارقة معايا جدًا.
+</p>
 
+<p>
+فـ معلش يا فطومي ❤️
+سامحيني على كل مرة زعلتك فيها، وعلى كل مرة خليتك تزعلي بسببي.
+</p>
+
+<div class="big">
+ومتحاوليش تستغلي الموقع ده عليا بعد كده 😂❤️
 </div>
 
+<p>
+وفي الآخر يعني...
+</p>
+
+<div class="big">
+بحبك يا فقريّة ❤️😂
+<br>
+ومش عايز أخسرك.
+</div>
+
+<div class="signature">
+من هاني اللي بيحبك وبيحب يرخم عليكي ❤️
+</div>
+
+</div>
 
 </section>
 
 </main>
 
 
-
-
 <section class="gallery">
 
-
 <h2>
-📸 حكاياتنا الحلوة ❤️
+📸 شوية من أحلى ذكرياتنا ❤️
 </h2>
-
-
 
 <div class="photos">
 
-
-
-<div class="photo-box">
-
 <img src="photo1.jpg">
-
-<p>
-أحلى واحدة اتخرجت يا ستي 😂❤️ اليوم ده كان مميز أوي وأنا كنت مبسوط وأنا شايفك فرحانة وفخور بيكي أوي عشان تعبك كله راح على حاجة حلوة
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo2.jpg">
-
-<p>
-آخر يوم امتحان 😔❤️ اليوم اللي كنت زعلان فيه عشان كنا بنودع بعض ومكنتش عايز اليوم يخلص بس كنت مبسوط عشانك إنك خلصتي مرحلة مهمة
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo3.jpg">
-
-<p>
-بوم بوم عيد ميلادك يا حبيبتي 😂❤️ اليوم ده كان مختلف عشان شوفت فرحتك وكنت مبسوط إني كنت جزء منه
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo4.jpg">
-
-<p>
-ذكرى من ذكرياتنا الحلوة ❤️ وكل صورة بينا ليها حكاية حتى لو بسيطة
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo5.jpg">
-
-<p>
-فاكرة الضحك والهزار اللي كان بينا 😂❤️ الحاجات الصغيرة دي هي اللي بحبها
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo6.jpg">
-
-<p>
-ذكريات كتير ولسه في حاجات أحلى نفسي نعيشها سوا ❤️
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo7.jpg">
-
-<p>
-كل مرة بشوف الصور دي بفتكر قد إيه وجودك فرق معايا ❤️
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo8.jpg">
-
-<p>
-حاجات بسيطة بس ليها مكان كبير عندي عشان كانت معاكي ❤️
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo9.jpg">
-
-<p>
-لسه عندنا صور وحكايات كتير مستنيانا 😂❤️
-</p>
-
-</div>
-
-
-
-
-<div class="photo-box">
-
 <img src="photo10.jpg">
 
-<p>
-وفي الآخر أهم حاجة إنك معايا يا فطومي ❤️😂
-</p>
-
 </div>
 
-
+<div class="note">
+كل صورة هنا وراها حكاية وذكرى ❤️
+<br>
+ومهما الصور كترت، لسه في حاجات كتير نفسي أعيشها معاكي.
 </div>
-
 
 </section>
+
 <footer>
-
 عملته مخصوص عشانك يا فطومي ❤️
-<br>
-من هاني اللي بيحبك وبيحب يرخم عليكي 😂❤️
-
 </footer>
-
 
 
 <script>
 
-
 function openLetter(){
 
-
-let letter = document.getElementById("letter");
-
-let button = document.querySelector("button");
-
-let music = document.getElementById("music");
-
-
-// تشغيل الأغنية بعد الضغط
-
-music.play().catch(function(){
-
-console.log("المتصفح محتاج ضغط من المستخدم");
-
-});
-
-
-// إظهار الرسالة
+const letter=document.getElementById("letter");
+const button=document.querySelector("button");
 
 letter.style.display="block";
-
-
-// إخفاء الزرار
-
 button.style.display="none";
-
-
-// النزول للرسالة
 
 setTimeout(function(){
 
 letter.scrollIntoView({
-
 behavior:"smooth",
-
 block:"start"
-
 });
 
-},300);
-
+},100);
 
 }
-
-
-
-
-// حركة ظهور الصور واحدة واحدة
-
-const photos = document.querySelectorAll(".photo-box");
-
-
-const observer = new IntersectionObserver((entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-
-entry.target.classList.add("show");
-
-
-}
-
-
-});
-
-
-},{
-
-
-threshold:.2
-
-
-});
-
-
-
-photos.forEach(photo=>{
-
-
-observer.observe(photo);
-
-
-});
-
-
 
 </script>
 
-
-
 </body>
-
 </html>
