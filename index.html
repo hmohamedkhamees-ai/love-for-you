@@ -7,6 +7,7 @@
 <title>لفطومي ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -20,6 +21,7 @@ color:white;
 overflow-x:hidden;
 }
 
+/* القلوب */
 .hearts{
 position:fixed;
 inset:0;
@@ -37,20 +39,28 @@ opacity:.7;
 }
 
 @keyframes up{
+
 0%{
 transform:translateY(0);
 opacity:0;
 }
+
 20%{
 opacity:1;
 }
+
 100%{
 transform:translateY(-120vh);
 opacity:0;
 }
+
 }
 
+
+/* الكارت الرئيسي */
+
 .page{
+
 min-height:100vh;
 display:flex;
 justify-content:center;
@@ -58,9 +68,12 @@ align-items:center;
 padding:25px;
 position:relative;
 z-index:2;
+
 }
 
+
 .card{
+
 max-width:800px;
 width:100%;
 background:rgba(255,255,255,.1);
@@ -69,25 +82,37 @@ border-radius:35px;
 padding:40px 25px;
 box-shadow:0 20px 60px #0008;
 text-align:center;
+
 }
+
 
 .small{
+
 font-size:18px;
 opacity:.8;
+
 }
+
 
 h1{
+
 font-size:70px;
 margin:20px;
+
 }
 
+
 .subtitle{
+
 font-size:21px;
 line-height:2;
 color:#ffd9e8;
+
 }
 
+
 button{
+
 margin:25px;
 padding:15px 35px;
 border:0;
@@ -97,83 +122,141 @@ font-weight:bold;
 cursor:pointer;
 background:white;
 color:#5a1230;
+
 }
 
+
 #letter{
+
 display:none;
 text-align:right;
 line-height:2.3;
 font-size:19px;
 animation:show 1s;
+
 }
+
 
 @keyframes show{
+
 from{
+
 opacity:0;
 transform:translateY(20px);
-}
-to{
-opacity:1;
-}
+
 }
 
+to{
+
+opacity:1;
+
+}
+
+}
+
+
 .big{
+
 text-align:center;
 font-size:30px;
 font-weight:bold;
 color:#ffd0df;
 margin:30px;
+
 }
 
-.signature{
-text-align:center;
-margin-top:30px;
-font-size:20px;
-}
+
+/* حركة الصور */
 
 .gallery{
+
 padding:50px 20px;
 position:relative;
 z-index:2;
+
 }
 
+
 .gallery h2{
+
 text-align:center;
 font-size:35px;
 margin-bottom:30px;
+
 }
 
+
 .photos{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:20px;
+
 }
 
+
 .photo-box{
+
 background:#ffffff15;
 padding:15px;
 border-radius:25px;
 text-align:center;
+
+opacity:0;
+transform:translateY(50px);
+animation:photoShow 1s ease forwards;
+
 }
 
+
+.photo-box:nth-child(1){animation-delay:.2s;}
+.photo-box:nth-child(2){animation-delay:.4s;}
+.photo-box:nth-child(3){animation-delay:.6s;}
+.photo-box:nth-child(4){animation-delay:.8s;}
+.photo-box:nth-child(5){animation-delay:1s;}
+.photo-box:nth-child(6){animation-delay:1.2s;}
+.photo-box:nth-child(7){animation-delay:1.4s;}
+.photo-box:nth-child(8){animation-delay:1.6s;}
+.photo-box:nth-child(9){animation-delay:1.8s;}
+.photo-box:nth-child(10){animation-delay:2s;}
+
+
+@keyframes photoShow{
+
+from{
+
+opacity:0;
+transform:translateY(50px) scale(.9);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+
 .photo-box img{
+
 width:100%;
 height:300px;
 object-fit:cover;
 border-radius:20px;
+
 }
 
+
 .photo-box p{
+
 margin-top:15px;
 line-height:2;
 color:#ffe0eb;
-}
 
-footer{
-text-align:center;
-padding:30px;
 }
-
 </style>
 </head>
 
@@ -181,83 +264,105 @@ padding:30px;
 
 <audio id="music" src="song.mp3"></audio>
 
+
 <div class="hearts">
+
 <span class="heart" style="left:10%">❤️</span>
 <span class="heart" style="left:30%;animation-delay:2s">💗</span>
 <span class="heart" style="left:50%;animation-delay:4s">💕</span>
 <span class="heart" style="left:70%;animation-delay:1s">❤️</span>
 <span class="heart" style="left:90%;animation-delay:3s">💖</span>
+
 </div>
+
+
 
 <main class="page">
 
 <section class="card">
 
+
 <div class="small">
 في حاجة كده عايز أقولها ليكي يا فلاحه 😂❤️
 </div>
+
 
 <h1>
 فطومي ❤️
 </h1>
 
+
 <div class="subtitle">
+
 مش عارف أقول الكلام ده إزاي 😂❤️<br>
 فقلت أعملك الموقع ده بدل ما أقعد أرغي كتير
+
 </div>
+
 
 <button onclick="openLetter()">
 افتحي يا بت 😂❤️
 </button>
 
+
+
 <div id="letter">
+
 
 <h2>
 بصي بقى يا فطومي ❤️
 </h2>
 
+
 <p>
 أنا مش بعرف أقول الكلام اللي جوايا دايمًا بس حبيت أعملك حاجة تفضل معاكي وتفكرك إنك حد مهم عندي أوي
 </p>
+
 
 <p>
 عارف إني ساعات ببقى رخم وبقفل وساعات بطلع عينك معايا 😂 بس والله ده مش معناه إنك مش فارقة معايا
 </p>
 
+
 <p>
 إنتي بقيتي جزء من يومي ومن تفاصيل كتير في حياتي ومهما رخمت عليكي عارفة إن مكانك كبير عندي
 </p>
 
+
 <div class="big">
 بحبك يا فلاحه 😂❤️
 </div>
-<div class="big">
-بحبك يا فلاحه 😂❤️
-</div>
+
 
 <p>
 فاكرة بقى كل الحاجات الصغيرة اللي بينا 😂❤️ الحاجات اللي يمكن تبان عادية بس بالنسبالي ليها معنى كبير
 </p>
 
+
 <p>
 أنا بحب ضحكتك وهزارك وطريقتك وبحب إني أرخم عليكي وتفضلي تزعلي مني شوية وبعدين نرجع نضحك تاني 😂❤️
 </p>
+
 
 <p>
 ومهما حصل بينا ومهما اتخانقنا مش عايزك تنسي إنك حد غالي عندي أوي
 </p>
 
+
 <p>
 ومعلش يا فطومي على كل مرة زعلتك فيها أو خليتك تحسي إني مش مهتم عشان ساعات أنا بعرف أعمل حاجات غلط بس مشاعري ناحيتك عمرها ما كانت قليلة
 </p>
+
 
 <div class="big">
 إنتي غالية عندي أوي ❤️
 </div>
 
+
 <p>
 ودلوقتي بقى تعالي نفتكر شوية حاجات حلوة بينا 😂❤️
 </p>
+
 
 </div>
 
@@ -266,103 +371,145 @@ padding:30px;
 </main>
 
 
+
+
 <section class="gallery">
+
 
 <h2>
 📸 حكاياتنا الحلوة ❤️
 </h2>
 
+
 <div class="photos">
+
 
 <div class="photo-box">
 <img src="photo1.jpg">
+
 <p>
 أحلى واحدة اتخرجت يا ستي 😂❤️ اليوم ده كان مميز أوي وأنا كنت مبسوط وأنا شايفك فرحانة وفخور بيكي أوي يا فلاحه عشان تعبك كله راح على حاجة حلوة
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo2.jpg">
+
 <p>
 آخر يوم امتحان 😔❤️ اليوم اللي كنت زعلان فيه عشان كنا بنودع بعض ومكنتش عايز اليوم يخلص بس كنت برضه مبسوط عشان عارف إنك خلصتي مرحلة مهمة
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo3.jpg">
+
 <p>
 بوم بوم عيد ميلادك يا حبيبتي 😂❤️ اليوم ده كان له طعم تاني عشان كنت شايف فرحتك ومبسوط إني كنت جزء من اليوم ده
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo4.jpg">
+
 <p>
 ذكرى من ذكرياتنا الحلوة ❤️ ولسه في حاجات كتير نفسي نعيشها سوا
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo5.jpg">
+
 <p>
 كل صورة هنا ليها حكاية حتى لو صغيرة بس بتفكرني بيكي ❤️
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo6.jpg">
+
 <p>
 ذكريات كتير ولسه الجاي أحلى إن شاء الله ❤️
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo7.jpg">
+
 <p>
 ضحك وهزار وحاجات بسيطة بس بحبها عشان كانت معاكي ❤️
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo8.jpg">
+
 <p>
 كل مرة بشوف الصور دي بفتكر قد إيه وجودك فرق معايا ❤️
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo9.jpg">
+
 <p>
 لسه عندنا صور وحكايات أكتر كتير 😂❤️
 </p>
+
 </div>
+
 
 
 <div class="photo-box">
 <img src="photo10.jpg">
+
 <p>
 وفي الآخر أهم حاجة إنك معايا يا فلاحه ❤️😂
 </p>
+
 </div>
+
+
 
 </div>
 
 </section>
 
 
+
+
 <footer>
+
 عملته مخصوص عشانك يا فطومي ❤️
 <br>
 من هاني اللي بيحبك وبيحب يرخم عليكي 😂❤️
+
 </footer>
+
+
 
 
 <script>
@@ -373,21 +520,32 @@ let letter=document.getElementById("letter");
 let button=document.querySelector("button");
 let music=document.getElementById("music");
 
+
 music.play();
 
+
 letter.style.display="block";
+
 button.style.display="none";
 
+
 setTimeout(function(){
+
 letter.scrollIntoView({
+
 behavior:"smooth",
 block:"start"
+
 });
+
 },200);
+
 
 }
 
 </script>
+
+
 
 </body>
 </html>
