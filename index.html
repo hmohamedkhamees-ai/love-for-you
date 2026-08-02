@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>حلمي و جزيرتي و بيتي ❤️</title>
+<title>لفطومي ❤️</title>
 
 <style>
 
@@ -18,53 +17,32 @@ box-sizing:border-box;
 
 body{
 font-family:Tahoma,Arial,sans-serif;
-background:#050505;
+background:linear-gradient(135deg,#120008,#5a1230,#220010);
 color:white;
 overflow-x:hidden;
 }
 
 
-/* خلفية النجوم */
-
-.stars{
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle,#ffffff55 1px,transparent 1px);
-background-size:50px 50px;
-animation:moveStars 20s linear infinite;
-z-index:0;
-}
-
-
-@keyframes moveStars{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-200px);
-}
-
-}
-
-
 /* القلوب */
 
-.heart{
-
+.hearts{
 position:fixed;
-bottom:-40px;
-font-size:25px;
-animation:heartUp 12s linear infinite;
-opacity:.7;
-z-index:1;
+inset:0;
+overflow:hidden;
+z-index:0;
+pointer-events:none;
+}
 
+.heart{
+position:absolute;
+bottom:-50px;
+font-size:25px;
+animation:up 12s linear infinite;
+opacity:.8;
 }
 
 
-@keyframes heartUp{
+@keyframes up{
 
 0%{
 transform:translateY(0);
@@ -84,120 +62,124 @@ opacity:0;
 
 
 
-/* شاشة البداية */
+/* الصفحة */
 
-.intro{
-
-height:100vh;
+.page{
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-flex-direction:column;
+padding:25px;
 position:relative;
 z-index:2;
-text-align:center;
-
-}
-
-
-.intro h1{
-
-font-size:80px;
-letter-spacing:3px;
-animation:titleShow 3s;
-
-}
-
-
-.intro p{
-
-font-size:25px;
-color:#ffd6e5;
-margin-top:20px;
-animation:titleShow 4s;
-
-}
-
-
-@keyframes titleShow{
-
-from{
-opacity:0;
-transform:scale(.7);
-}
-
-to{
-opacity:1;
-transform:scale(1);
-}
-
-}
-
-
-
-.enter{
-
-margin-top:50px;
-padding:18px 40px;
-border-radius:50px;
-border:none;
-font-size:20px;
-cursor:pointer;
-background:white;
-color:#5a1230;
-
-transition:.4s;
-
-}
-
-
-.enter:hover{
-
-transform:scale(1.1);
-
-}
-
-
-
-/* المحتوى */
-
-.container{
-
-display:none;
-position:relative;
-z-index:3;
-padding:30px;
-
 }
 
 
 .card{
-
-max-width:850px;
-margin:auto;
-background:#ffffff12;
+width:100%;
+max-width:800px;
+background:rgba(255,255,255,.1);
 backdrop-filter:blur(15px);
 border-radius:35px;
-padding:40px;
-box-shadow:0 0 50px #000;
-
-}
-
-
-
-h2{
-
+padding:40px 25px;
 text-align:center;
-font-size:35px;
-margin-bottom:30px;
-
+box-shadow:0 20px 60px #0008;
 }
 
 
-.text{
+.small{
+font-size:18px;
+opacity:.8;
+}
+
+
+h1{
+font-size:70px;
+margin:20px;
+}
+
+
+.subtitle{
+font-size:21px;
+line-height:2;
+color:#ffd9e8;
+}
+
+
+
+/* الزرار */
+
+button{
+
+margin:30px;
+
+padding:16px 35px;
+
+border:0;
+
+border-radius:50px;
 
 font-size:20px;
-line-height:2.4;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:#e60023;
+
+color:white;
+
+box-shadow:0 10px 25px #0008;
+
+transition:.3s;
+
+}
+
+
+button:hover{
+
+transform:scale(1.08);
+
+background:#ff1744;
+
+}
+
+
+
+/* الرسالة */
+
+#letter{
+
+display:none;
+
+text-align:right;
+
+line-height:2.3;
+
+font-size:19px;
+
+animation:show 1s;
+
+}
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
 
@@ -206,53 +188,142 @@ line-height:2.4;
 .big{
 
 text-align:center;
-font-size:35px;
+
+font-size:30px;
+
+font-weight:bold;
+
 color:#ffd0df;
-margin:35px;
 
-}
-
-
-
-.music{
-
-text-align:center;
 margin:30px;
 
 }
 
 
-.music button{
 
-padding:15px 30px;
-border-radius:50px;
-border:none;
-font-size:18px;
-cursor:pointer;
+.gallery{
+
+padding:50px 20px;
+
+position:relative;
+
+z-index:2;
 
 }
 
+
+.gallery h2{
+
+text-align:center;
+
+font-size:35px;
+
+margin-bottom:30px;
+
+}
+
+
+.photos{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:20px;
+
+}
+
+
+.photo-box{
+
+background:#ffffff15;
+
+padding:15px;
+
+border-radius:25px;
+
+text-align:center;
+
+opacity:0;
+
+transform:translateY(50px);
+
+transition:1s;
+
+}
+
+
+.photo-box.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+.photo-box img{
+
+width:100%;
+
+height:300px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+
+.photo-box p{
+
+margin-top:15px;
+
+line-height:2;
+
+color:#ffe0eb;
+
+}
+
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+}
 
 </style>
 
 </head>
 
-
 <body>
 
-
-<div class="stars"></div>
-
-
-<div class="heart" style="left:10%">❤️</div>
-<div class="heart" style="left:30%;animation-delay:2s">💗</div>
-<div class="heart" style="left:50%;animation-delay:4s">💕</div>
-<div class="heart" style="left:70%;animation-delay:1s">❤️</div>
-<div class="heart" style="left:90%;animation-delay:3s">💖</div>
+<audio id="music" src="song.mp3"></audio>
 
 
+<div class="hearts">
 
-<section class="intro" id="intro">
+<span class="heart" style="left:10%">❤️</span>
+
+<span class="heart" style="left:30%;animation-delay:2s">💗</span>
+
+<span class="heart" style="left:50%;animation-delay:4s">💕</span>
+
+<span class="heart" style="left:70%;animation-delay:1s">❤️</span>
+
+<span class="heart" style="left:90%;animation-delay:3s">💖</span>
+
+</div>
+<main class="page">
+
+<section class="card">
+
+
+<div class="small">
+في حاجة كده عايز أقولها ليكي يا فطومي 😂❤️
+</div>
 
 
 <h1>
@@ -260,26 +331,21 @@ cursor:pointer;
 </h1>
 
 
-<p>
-من هاني لفطومي 🌙
-</p>
+<div class="subtitle">
+
+مش عارف أقول الكلام ده إزاي 😂❤️<br>
+فقلت أعملك الموقع ده بدل ما أقعد أرغي كتير
+
+</div>
 
 
-<button class="enter" onclick="startSite()">
-ادخلي يا فلاحه 😂❤️
+<button onclick="openLetter()">
+اضغطي زي ما انتي ضاغطة عليا 😂❤️
 </button>
 
 
-</section>
 
-
-
-
-
-<section class="container" id="site">
-
-
-<div class="card">
+<div id="letter">
 
 
 <h2>
@@ -287,63 +353,71 @@ cursor:pointer;
 </h2>
 
 
-<div class="music">
-
-<audio id="music" src="song.mp3"></audio>
-
-<button onclick="playMusic()">
-🎵 شغلي الأغنية
-</button>
-
-</div>
-
-
-<div class="text" id="letter">
-
 
 <p>
-أنا مش بعرف أقول الكلام اللي جوايا دايمًا 😂❤️
-بس حبيت أعملك حاجة تفضل معاكي وتفكرك إنك حد مهم عندي أوي
+أنا مش بعرف أقول الكلام اللي جوايا دايمًا بس حبيت أعملك حاجة تفضل معاكي وتفكرك إنك حد مهم عندي أوي
 </p>
 
 
 <p>
-عارف إني ساعات ببقى رخم وساعات بقفل وساعات بطلع عينك معايا يا فلاحه 😂
-بس والله ده مش معناه إنك مش فارقة معايا
+عارف إني ساعات ببقى رخم وبقفل وساعات بطلع عينك معايا 😂 بس والله ده مش معناه إنك مش فارقة معايا
 </p>
 
 
 <p>
-إنتي بقيتي جزء من يومي ومن تفاصيل كتير في حياتي
-وبقيت متعود على وجودك وعلى كلامنا وعلى هزارنا
+إنتي بقيتي جزء من يومي ومن تفاصيل كتير في حياتي ومهما رخمت عليكي عارفة إن مكانك كبير عندي
 </p>
+
 
 
 <div class="big">
-بحبك يا فلاحه 😂❤️
+بحبك يا فطومي 😂❤️
 </div>
 
 
+
 <p>
-بحب ضحكتك وطريقتك وهزارك حتى لما بتطلعي عيني 😂❤️
-وبحب إن في حد بيفرق معاه أنا عامل ايه
+فاكرة بقى كل الحاجات الصغيرة اللي بينا 😂❤️ الحاجات اللي يمكن تبان عادية بس بالنسبالي ليها معنى كبير
 </p>
 
 
+
 <p>
-ومعلش على كل مرة زعلتك فيها أو حسستك إني مش مهتم
-يمكن ساعات مبعرفش أتصرف صح
-بس مكانك عندي كبير أوي
+أنا بحب ضحكتك وهزارك وطريقتك وبحب إني أرخم عليكي وتفضلي تزعلي مني شوية وبعدين نرجع نضحك تاني 😂❤️
 </p>
 
 
+
 <p>
-فاكرة بقى إن كل صورة من اللي جاية دي وراها حكاية ❤️
-حاجات صغيرة بس بالنسبالي ليها معنى كبير
+ومهما حصل بينا ومهما اتخانقنا مش عايزك تنسي إنك حد غالي عندي أوي
+</p>
+
+
+
+<p>
+ومعلش يا فطومي على كل مرة زعلتك فيها أو خليتك تحسي إني مش مهتم عشان ساعات أنا بعرف أعمل حاجات غلط بس مشاعري ناحيتك عمرها ما كانت قليلة
+</p>
+
+
+
+<div class="big">
+إنتي غالية عندي أوي ❤️
+</div>
+
+
+
+<p>
+ودلوقتي بقى تعالي نفتكر شوية حاجات حلوة بينا 😂❤️
 </p>
 
 
 </div>
+
+
+</section>
+
+</main>
+
 
 
 
@@ -355,7 +429,9 @@ cursor:pointer;
 </h2>
 
 
+
 <div class="photos">
+
 
 
 <div class="photo-box">
@@ -363,13 +439,11 @@ cursor:pointer;
 <img src="photo1.jpg">
 
 <p>
-أحلى واحدة اتخرجت يا ستي 😂❤️
-
-اليوم ده كان مميز أوي
-كنت مبسوط وأنا شايفك فرحانة وفخور بيكي يا فلاحه عشان تعبك كله راح على حاجة حلوة ❤️
+أحلى واحدة اتخرجت يا ستي 😂❤️ اليوم ده كان مميز أوي وأنا كنت مبسوط وأنا شايفك فرحانة وفخور بيكي أوي عشان تعبك كله راح على حاجة حلوة
 </p>
 
 </div>
+
 
 
 
@@ -378,13 +452,11 @@ cursor:pointer;
 <img src="photo2.jpg">
 
 <p>
-آخر يوم امتحان 😔❤️
-
-اليوم اللي كنت زعلان فيه عشان كنا بنودع بعض
-مكنتش عايز اليوم يخلص بس كنت مبسوط عشان خلصتي مرحلة مهمة
+آخر يوم امتحان 😔❤️ اليوم اللي كنت زعلان فيه عشان كنا بنودع بعض ومكنتش عايز اليوم يخلص بس كنت مبسوط عشانك إنك خلصتي مرحلة مهمة
 </p>
 
 </div>
+
 
 
 
@@ -393,13 +465,11 @@ cursor:pointer;
 <img src="photo3.jpg">
 
 <p>
-   عيد ميلادك يا حبيبتي 😂❤️
-
-اليوم ده كان مختلف عشان شوفت فرحتك
-وكان حلو إني كنت جزء من اليوم ده
+بوم بوم عيد ميلادك يا حبيبتي 😂❤️ اليوم ده كان مختلف عشان شوفت فرحتك وكنت مبسوط إني كنت جزء منه
 </p>
 
 </div>
+
 
 
 
@@ -408,11 +478,11 @@ cursor:pointer;
 <img src="photo4.jpg">
 
 <p>
-ذكرى من ذكرياتنا الحلوة ❤️
-ولسه في حاجات كتير نفسي نعيشها سوا
+ذكرى من ذكرياتنا الحلوة ❤️ وكل صورة بينا ليها حكاية حتى لو بسيطة
 </p>
 
 </div>
+
 
 
 
@@ -421,11 +491,11 @@ cursor:pointer;
 <img src="photo5.jpg">
 
 <p>
-كل صورة هنا ليها حكاية
-حتى لو حاجة بسيطة بس بتفكرني بيكي ❤️
+فاكرة الضحك والهزار اللي كان بينا 😂❤️ الحاجات الصغيرة دي هي اللي بحبها
 </p>
 
 </div>
+
 
 
 
@@ -434,10 +504,11 @@ cursor:pointer;
 <img src="photo6.jpg">
 
 <p>
-ذكريات كتير ولسه اللي جاي أحلى إن شاء الله ❤️
+ذكريات كتير ولسه في حاجات أحلى نفسي نعيشها سوا ❤️
 </p>
 
 </div>
+
 
 
 
@@ -446,10 +517,11 @@ cursor:pointer;
 <img src="photo7.jpg">
 
 <p>
-ضحك وهزار وحاجات بسيطة بس بحبها عشان كانت معاكي 😂❤️
+كل مرة بشوف الصور دي بفتكر قد إيه وجودك فرق معايا ❤️
 </p>
 
 </div>
+
 
 
 
@@ -458,10 +530,11 @@ cursor:pointer;
 <img src="photo8.jpg">
 
 <p>
-كل مرة بشوف الصور دي بفتكر قد ايه وجودك فرق معايا ❤️
+حاجات بسيطة بس ليها مكان كبير عندي عشان كانت معاكي ❤️
 </p>
 
 </div>
+
 
 
 
@@ -470,10 +543,11 @@ cursor:pointer;
 <img src="photo9.jpg">
 
 <p>
-لسه عندنا حكايات وصور كتير مستنيانا ❤️
+لسه عندنا صور وحكايات كتير مستنيانا 😂❤️
 </p>
 
 </div>
+
 
 
 
@@ -482,7 +556,7 @@ cursor:pointer;
 <img src="photo10.jpg">
 
 <p>
-وفي الآخر أهم حاجة إنك معايا يا رح قلبي يا فطوزه 😂❤️
+وفي الآخر أهم حاجة إنك معايا يا فطومي ❤️😂
 </p>
 
 </div>
@@ -492,41 +566,115 @@ cursor:pointer;
 
 
 </section>
+<footer>
 
+عملته مخصوص عشانك يا فطومي ❤️
+<br>
+من هاني اللي بيحبك وبيحب يرخم عليكي 😂❤️
 
-</div>
-
-
-</section>
+</footer>
 
 
 
 <script>
 
 
-function startSite(){
+function openLetter(){
 
-document.getElementById("intro").style.display="none";
 
-document.getElementById("site").style.display="block";
+let letter = document.getElementById("letter");
+
+let button = document.querySelector("button");
+
+let music = document.getElementById("music");
+
+
+// تشغيل الأغنية بعد الضغط
+
+music.play().catch(function(){
+
+console.log("المتصفح محتاج ضغط من المستخدم");
+
+});
+
+
+// إظهار الرسالة
+
+letter.style.display="block";
+
+
+// إخفاء الزرار
+
+button.style.display="none";
+
+
+// النزول للرسالة
+
+setTimeout(function(){
+
+letter.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+},300);
+
 
 }
 
 
 
-function playMusic(){
 
-let music=document.getElementById("music");
+// حركة ظهور الصور واحدة واحدة
 
-music.play();
+const photos = document.querySelectorAll(".photo-box");
+
+
+const observer = new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+
+entry.target.classList.add("show");
+
 
 }
+
+
+});
+
+
+},{
+
+
+threshold:.2
+
+
+});
+
+
+
+photos.forEach(photo=>{
+
+
+observer.observe(photo);
+
+
+});
+
 
 
 </script>
 
 
+
 </body>
 
 </html>
-
